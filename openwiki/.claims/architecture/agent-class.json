@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:333c77b325dab6a2ee8e6ae1a303797468d103d072355b4596c4b865b2b29e42",
+  "claims": [
+    {
+      "id": "claim_ae05bf16e6d74c1189a6c178e20b9a74",
+      "statement": "The base `Elf.invoke` method ignores all arguments and always returns the literal string \"Hi !\".",
+      "evidence": [
+        {
+          "resource": "repo://src/elfhub/agent.py",
+          "version": "repo-file-v1:sha256:96d1afce67043c3850d3db928ad65444e5b5694431e42fc4d1ea8dbf6e6ff794"
+        }
+      ]
+    },
+    {
+      "id": "claim_d15ebedac77f427781409a889c5cc6ee",
+      "statement": "`Elf.__call__` forwards all arguments to `self.invoke`, so an Elf instance is directly callable and subclasses only need to override `invoke` to change behavior.",
+      "evidence": [
+        {
+          "resource": "repo://src/elfhub/agent.py",
+          "version": "repo-file-v1:sha256:96d1afce67043c3850d3db928ad65444e5b5694431e42fc4d1ea8dbf6e6ff794"
+        }
+      ]
+    },
+    {
+      "id": "claim_4cd7543f1f164bc389024e5bff6bf47c",
+      "statement": "The elfhub package's only public symbol is `Elf`, re-exported via `__all__ == [\"Elf\"]`, with `__version__` = \"0.1.0\".",
+      "evidence": [
+        {
+          "resource": "repo://src/elfhub/__init__.py",
+          "version": "repo-file-v1:sha256:4d29f3b1772581839336a66a6c5fe098ead46c845d6d036e877feb6445184881"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-17T22:47:17.598Z"
+  }
+}

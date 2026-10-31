@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/agent-class.md": {
+      "pageVersion": "sha256:333c77b325dab6a2ee8e6ae1a303797468d103d072355b4596c4b865b2b29e42",
+      "completedBy": "opencode",
+      "completedRunId": "60b7043d-2ae9-42db-8346-3626553f028b",
+      "gitHead": "78ed3e0947759a027738365682888029e62dece3",
+      "sourceFingerprint": "sha256:63ce0c2f64ea8781ee6ee56cea51d4094a5317b7be7ac473fe20fcce96fdabf5"
+    },
+    "/openwiki/operations/packaging-ci.md": {
+      "pageVersion": "sha256:c5a51f6927d0fec801780c6bb9845f373837f47ee9b9f42ff5d66bd1c1edc574",
+      "completedBy": "opencode",
+      "completedRunId": "60b7043d-2ae9-42db-8346-3626553f028b",
+      "gitHead": "78ed3e0947759a027738365682888029e62dece3",
+      "sourceFingerprint": "sha256:63ce0c2f64ea8781ee6ee56cea51d4094a5317b7be7ac473fe20fcce96fdabf5"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:151b1942478245f2ecbf0f4bf04e1718bf7590ec98249fd5f1961b21a0f0a2f2",
+      "completedBy": "opencode",
+      "completedRunId": "60b7043d-2ae9-42db-8346-3626553f028b",
+      "gitHead": "78ed3e0947759a027738365682888029e62dece3",
+      "sourceFingerprint": "sha256:63ce0c2f64ea8781ee6ee56cea51d4094a5317b7be7ac473fe20fcce96fdabf5"
+    }
+  }
+}

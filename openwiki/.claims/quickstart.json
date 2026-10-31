@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:151b1942478245f2ecbf0f4bf04e1718bf7590ec98249fd5f1961b21a0f0a2f2",
+  "claims": [
+    {
+      "id": "claim_9eec6bcf08e542639da00ec8afad9889",
+      "statement": "The published `elfhub` package exposes exactly one public symbol, `Elf`, installed via `pip install elfhub`.",
+      "evidence": [
+        {
+          "resource": "repo://src/elfhub/__init__.py",
+          "version": "repo-file-v1:sha256:4d29f3b1772581839336a66a6c5fe098ead46c845d6d036e877feb6445184881"
+        }
+      ]
+    },
+    {
+      "id": "claim_de06a87b2479454ea149eb7065661fe8",
+      "statement": "Releases are published to PyPI automatically by pushing a `v*` tag once CI's Python 3.9-13 smoke-test matrix passes.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:48b868bbb9ed54163211940e9be798adac533f7de4050a36bd007b49c2a28ae4"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-17T22:47:17.598Z"
+  }
+}

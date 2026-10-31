@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c5a51f6927d0fec801780c6bb9845f373837f47ee9b9f42ff5d66bd1c1edc574",
+  "claims": [
+    {
+      "id": "claim_26fa169e76544610824948100be05548",
+      "statement": "elfhub is built with hatchling and the wheel packages only src/elfhub; the package declares no runtime dependencies and requires Python >= 3.9.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml",
+          "version": "repo-file-v1:sha256:57b62d504972b6c3f722f82a5bac5c810aeeaa22beaad7cfebf0fa4042434e3c"
+        }
+      ]
+    },
+    {
+      "id": "claim_06ca2fcc95604ffc8c7058e94ecba9a7",
+      "statement": "Dev tooling (pytest, build, twine) is isolated in the optional `dev` extra and installed only in CI, not as runtime dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml",
+          "version": "repo-file-v1:sha256:57b62d504972b6c3f722f82a5bac5c810aeeaa22beaad7cfebf0fa4042434e3c"
+        }
+      ]
+    },
+    {
+      "id": "claim_d477ae7f209645c6854f33644a3af8ac",
+      "statement": "CI's test job runs a Python 3.9-13 matrix and its publish job runs only on `v*` tags after the test job succeeds, building with `python -m build` and publishing via trusted Publishing (gh-action-pypi-publish, id-token: write).",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:48b868bbb9ed54163211940e9be798adac533f7de4050a36bd007b49c2a28ae4"
+        }
+      ]
+    },
+    {
+      "id": "claim_43d5c0ba40c64dc899029bb77005cda8",
+      "statement": "Releases are cut by pushing a `v*` tag; the workflow has no step syncing the tagged version with the pyproject version, so a version bump must be committed before tagging.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:48b868bbb9ed54163211940e9be798adac533f7de4050a36bd007b49c2a28ae4"
+        },
+        {
+          "resource": "repo://pyproject.toml",
+          "version": "repo-file-v1:sha256:57b62d504972b6c3f722f82a5bac5c810aeeaa22beaad7cfebf0fa4042434e3c"
+        }
+      ]
+    },
+    {
+      "id": "claim_be72f90185934ea088ed2ed0d5fe2a47",
+      "statement": "The CI test step runs `python demo/demo.py`, which creates its own venv and exercises the published PyPI package, having replaced the earlier pytest suite under `tests/`.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:48b868bbb9ed54163211940e9be798adac533f7de4050a36bd007b49c2a28ae4"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.1",
+    "at": "2026-10-17T22:47:17.598Z"
+  }
+}
