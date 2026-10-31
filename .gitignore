@@ -8,3 +8,7 @@ venv/
 .pytest_cache/
 *.pyc
 .DS_Store
+.venv/
+.elf/
+site/
+.cache/

@@ -1,0 +1,78 @@
+# The documentation site, built with Zensical (https://zensical.org).
+# Preview locally with `zensical serve`; CI builds it with `zensical build --strict`.
+
+[project]
+site_name = "ElfHub"
+site_description = "An open-source framework for building human-like agents (elves)."
+site_url = "https://eshan-chawla.github.io/elfhub-py/"
+repo_url = "https://github.com/eshan-chawla/elfhub-py"
+repo_name = "eshan-chawla/elfhub-py"
+edit_uri = "edit/main/docs/"
+
+nav = [
+  { "Home" = "index.md" },
+  { "Getting started" = "getting-started.md" },
+  { "Concepts" = [
+    { "Elves and runs" = "concepts/elves.md" },
+    { "Tools" = "concepts/tools.md" },
+    { "Modules" = "concepts/modules.md" },
+    { "Approvals and budgets" = "concepts/approvals.md" },
+    { "Events and sessions" = "concepts/events.md" },
+  ] },
+  { "Plugins" = [
+    { "Writing plugins" = "plugins/writing-plugins.md" },
+  ] },
+  { "Reference" = [
+    { "elf.toml" = "reference/elf-toml.md" },
+    { "Python API" = "reference/api.md" },
+  ] },
+  { "Roadmap" = "roadmap.md" },
+]
+
+[project.theme]
+language = "en"
+features = [
+  "content.code.copy",
+  "navigation.footer",
+  "navigation.instant",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.top",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+# The Python API reference is generated from the source by mkdocstrings.
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+show_source = false
+show_root_heading = true
+members_order = "source"
+show_signature_annotations = true
+separate_signature = true
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+pymdownx.details = {}
+pymdownx.highlight = {}
+pymdownx.superfences = {}
+toc.permalink = true

@@ -1,0 +1,24 @@
+# A stand-in third-party plugin package. The test suite installs it to prove that
+# plugins are discovered through entry points alone.
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "elfhub-fixture-plugin"
+version = "0.1.0"
+description = "Test fixture: an elfhub plugin package"
+requires-python = ">=3.11"
+dependencies = []  # uses the elfhub already installed in the environment
+
+[project.entry-points."elfhub.llms"]
+fixture = "elfhub_fixture_plugin:FixtureLLM"
+
+[project.entry-points."elfhub.modules"]
+fixture-greeter = "elfhub_fixture_plugin:FixtureGreeter"
+
+[project.entry-points."elfhub.tools"]
+fixture_shout = "elfhub_fixture_plugin:shout"
+
+[tool.hatch.build.targets.wheel]
+packages = ["elfhub_fixture_plugin"]

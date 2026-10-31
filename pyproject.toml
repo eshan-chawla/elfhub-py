@@ -4,32 +4,56 @@ build-backend = "hatchling.build"
 
 [project]
 name = "elfhub"
-version = "0.1.0"
-description = "ElfHub: a minimal agent framework base class"
+dynamic = ["version"]
+description = "ElfHub: an open-source framework for building human-like agents (elves)"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Eshan Chawla" }]
-keywords = ["agent", "ai", "agents", "framework"]
+keywords = ["agent", "ai", "agents", "framework", "llm"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
 ]
-dependencies = []
+dependencies = ["pydantic>=2.9", "typing-extensions>=4.12"]
 
 [project.urls]
-Homepage = "https://github.com/eshanchawla/elfhub-py"
-Repository = "https://github.com/eshanchawla/elfhub-py"
+Homepage = "https://github.com/eshan-chawla/elfhub-py"
+Repository = "https://github.com/eshan-chawla/elfhub-py"
 
 [project.optional-dependencies]
-dev = ["pytest", "build", "twine"]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "ruff", "pyright", "build", "twine"]
+docs = ["zensical>=0.0.72", "mkdocstrings-python>=2.0"]
+
+[project.scripts]
+elfhub = "elfhub.cli:main"
+
+[tool.hatch.version]
+path = "src/elfhub/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/elfhub"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC", "RUF"]
+
+[tool.pyright]
+include = ["src"]
+pythonVersion = "3.11"
+typeCheckingMode = "strict"
