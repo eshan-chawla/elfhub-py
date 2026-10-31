@@ -1,6 +1,6 @@
 """ElfHub: an open-source framework for building human-like agents (elves)."""
 
-__version__ = "0.2.0"
+__version__ = "0.0.2"
 
 from elfhub.agent import Elf
 from elfhub.loop.budget import Budget
